@@ -1,27 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Lilita+One&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  section {
+    @apply flex items-center min-h-screen;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .header {
+    @apply fixed top-0 z-10 w-full px-4 py-6 bg-white;
+  }
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+  .flexAround {
+    @apply flex items-center justify-around;
+  }
+
+  /* Section */
+  .home {
+    @apply bg-[#fff4ea] flex-col px-[100px] pt-[100px] h-screen overflow-y-hidden relative;
+  }
+  .circle {
+    @apply absolute bottom-[-1230px] w-[1300px] h-[1300px] bg-[#faaf35] rounded-full translate-y-[-100px] flex items-center flex-col;
+  }
+
+  .orangeSection {
+    @apply bg-[#ffdca3] h-screen overflow-hidden;
+  }
+  .appleSection {
+    @apply bg-[#b1e4ff] h-screen overflow-hidden;
+  }
+  .peachSection {
+    @apply bg-[#fad4e3] h-screen overflow-hidden;
+  }
+  .endSection {
+    @apply bg-[#fff4ea] h-screen overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .fontLeague {
+    font-family: "League Spartan", sans-serif;
+  }
+  .fontLilita {
+    font-family: "Lilita One", sans-serif;
+  }
+  .textStorke {
+    -webkit-text-stroke: 3px #fff;
+    text-stroke: 3px #fff;
+  }
 }
